@@ -72,3 +72,7 @@ int Epoll_wait(int epfd, SE* events, int maxevents, int timeout) {
 ssize_t readv(int sockfd, const struct iovec* iov, int iovcnt) {
     return readv(sockfd, iov, iovcnt);
 }
+
+ssize_t readn(int fd, string& inbuffer, bool& zero) {
+    
+}
