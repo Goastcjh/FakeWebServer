@@ -59,3 +59,12 @@ int Epoll_ctl(int epfd, int op, int fd, SE* event) {
     }
     return n;
 }
+
+
+int Epoll_wait(int epfd, SE* events, int maxevents, int timeout) {
+    int n;
+    if ((n = epoll_wait(epfd, events, maxevents, timeout)) < 0) {
+        fprintf(stderr, "epoll wait error\n");
+    }
+    return n;
+}
