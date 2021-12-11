@@ -25,4 +25,16 @@ private:
     pthread_mutex_t mutex_;
 };
 
+class MutexlockGuard : noncopyable {
+public:
+    //只能显示构造
+    explicit MutexlockGuard(MutexLock& mutex_) : mutex_(mutex_) {
+        mutex_.lock();
+    }
+    ~MutexlockGuard() {
+        mutex_.unlock();
+    }
+private:
+    MutexLock& mutex_;
+};
 #endif
