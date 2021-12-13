@@ -14,7 +14,7 @@ public:
     }
 
     ~Condition() {
-        pthread_cond_destroy(pcond_);
+        pthread_cond_destroy(&pcond_);
     }
 
     void wait() {
