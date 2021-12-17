@@ -23,7 +23,7 @@ public:
     void deallocate(Slot *p);
 
 private:
-    int slot_size; //
+    int slot_size; //给当前Block内存块分配的大小
     Slot *currentBlock;//当前Block内存块
     Slot *currentSlot;//当前Slot槽
     Slot *lastSlot;//指向该Block中最后一块可用的Slot
